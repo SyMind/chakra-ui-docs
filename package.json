@@ -52,6 +52,7 @@
     "mdx-bundler": "^9.0.1",
     "next": "15.4.0-canary.123",
     "next-contentlayer": "0.3.0",
+    "next-rspack": "15.4.0-canary.123",
     "next-seo": "^5.4.0",
     "octokit": "^2.0.4",
     "plop": "^3.1.2",
