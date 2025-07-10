@@ -24,7 +24,7 @@ export function ComponentOverviewItem(props: Props) {
       _hover={{ shadow: 'md' }}
     >
       <Flex overflow='hidden' bg='gray.100'>
-        <NextImage src={imageUrl} width={400} height={300} objectFit='cover' />
+        <NextImage alt="" src={imageUrl} width={400} height={300} objectFit='cover' />
       </Flex>
 
       <NextLink href={url} passHref>
