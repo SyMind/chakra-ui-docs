@@ -3,7 +3,7 @@ const { withContentlayer } = require('next-contentlayer')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withRspack = require("next-rspack")
 
-module.exports = withRspack(withContentlayer({
+const nextConfig = withContentlayer({
   optimizeFonts: true,
   images: {
     domains: [
@@ -20,4 +20,10 @@ module.exports = withRspack(withContentlayer({
   productionBrowserSourceMaps: true,
   redirects: require('./next-redirect'),
   reactStrictMode: true,
-}))
+  webpack(config) {
+    config.cache = false;
+    return config;
+  }
+})
+
+module.exports = process.env.NEXT_RSPACK ? withRspack(nextConfig) : nextConfig;
