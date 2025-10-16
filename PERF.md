@@ -1,6 +1,11 @@
 # Performance Comparison
 
-I tested the performance with the following steps:
+I tested the build performance with the following steps:
+
+1. Execute `pnpm run build`
+2. Wait for the 'Compiled successfully' message
+
+I tested the dev performance with the following steps:
 
 1. Execute `pnpm run dev`
 2. Wait for the server to be ready (indicated by the 'Ready' message)
@@ -10,8 +15,8 @@ Each build was run 5 times, and the shortest time to reach "Compiled successfull
 
 Test environment: Apple M1 Pro CPU
 
-| Tool       | Build without cache | Build with cache | Dev without cache                | Dev with cache                  |
-|------------|--------------------|------------------|----------------------------------|---------------------------------|
-| Rspack     | 5.0s               | 4.0s             | 1.9s (2656 modules)              | 1.6s (2650 modules)             |
-| Webpack    | 14.0s              | 4.0s             | 7.8s (2688 modules)              | 3.2s (2682 modules)             |
-| Turbopack  | 6.3s               | -                | 2.7s                             | -                               |
+| Tool                              | Build without cache | Dev without cache               |
+|-----------------------------------|--------------------|----------------------------------|
+| Rspack (next@16.0.0-canary.7)     | 3.8s               | 1.7s                             |
+| Rspack (next@15.4.0-canary.123)   | 5.0s               | 1.9s                             |
+| Webpack                           | 14.0s              | 7.8s                             |
